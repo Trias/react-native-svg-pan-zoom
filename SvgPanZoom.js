@@ -244,12 +244,7 @@ export default class SvgPanZoom extends Component {
                 { translateY: this.state.TranslationAnimation.y },
                 { scale: this.state.scaleAnimation }
             ] }, canvasStyle)}>
-          <SvgView style={{
-            width: canvasWidth,
-            height: canvasHeight,
-        }}>
             {children}
-          </SvgView>
         </Animated.View>
 
       </View>);

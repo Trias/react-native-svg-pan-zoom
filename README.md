@@ -34,33 +34,37 @@ class Example extends Component {
         >
 
           {/* Doesn't consume or respond to clicks */}
-          <Circle
-            cx          = {100}
-            cy          = {100}
-            r           = {42} 
-            stroke      = "red"
-            strokeWidth = "2.5"
-            fill        = "blue"
-          />
-
-          {/* Responds to clicks */}
-          <SvgPanZoomElement
-            x ={50}
-            y ={50}
-            onClick         = {()=>{ console.log('onClick!') }}
-            onClickCanceled = {()=>{ console.log('onClickCanceled!') }}
-            onClickRelease  = {()=>{ console.log('onClickRelease!') }}
-            onDrag          = {()=>{ console.log('onDrag!') }}
+          <Svg
+            style={{width: 500, height: 500}}
           >
             <Circle
-              cx          = {42}
-              cy          = {42}
+              cx          = {100}
+              cy          = {100}
               r           = {42} 
-              stroke      = "blue"
+              stroke      = "red"
               strokeWidth = "2.5"
-              fill        = "red"
+              fill        = "blue"
             />
-          </SvgPanZoomElement>
+
+            {/* Responds to clicks */}
+            <SvgPanZoomElement
+              x ={50}
+              y ={50}
+              onClick         = {()=>{ console.log('onClick!') }}
+              onClickCanceled = {()=>{ console.log('onClickCanceled!') }}
+              onClickRelease  = {()=>{ console.log('onClickRelease!') }}
+              onDrag          = {()=>{ console.log('onDrag!') }}
+            >
+              <Circle
+                cx          = {42}
+                cy          = {42}
+                r           = {42} 
+                stroke      = "blue"
+                strokeWidth = "2.5"
+                fill        = "red"
+              />
+            </SvgPanZoomElement>
+          </Svg>
 
         </SvgPanZoom>
 
